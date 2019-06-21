@@ -30,6 +30,11 @@ end
 
 def apply_clearance(cart)
   # code here
+  cart.each do |food, hash|
+     if hash[:clearance] == true
+       hash[:price] = (hash[:price]*0.8).round(2)
+     end
+  end
 end
 
 def checkout(cart, coupons)
