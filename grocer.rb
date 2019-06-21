@@ -3,9 +3,9 @@ def consolidate_cart(cart)
   new_cart={}
     cart.each do |item|
       if new_cart.include?(item.keys.first)
-         new_cart[item.keys.first][:count] += 1
+        new_cart[item.keys.first][:count] += 1
       else
-         new_cart[item.keys.first] = item.values.first.merge({:count => 1})
+        new_cart[item.keys.first] = item.values.first.merge({:count => 1})
       end
     end
   new_cart
@@ -31,9 +31,9 @@ end
 def apply_clearance(cart)
   # code here
   cart.each do |food, hash|
-     if hash[:clearance] == true
-       hash[:price] = (hash[:price]*0.8).round(2)
-     end
+    if hash[:clearance] == true
+      hash[:price] = (hash[:price]*0.8).round(2)
+    end
   end
 end
 
